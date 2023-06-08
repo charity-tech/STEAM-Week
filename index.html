@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Project Archive Dashboard</title>
+   <link rel="stylesheet" href="styles.css"> 
+</head>
+<body>
+    <!-- Welcome message -->
+    <h1>NPTP Students' Projects Archive!</h1>
+
+    <!-- Tab navigation -->
+    <div class="tab">
+        <button class="tablinks home" onclick="openTab(event, 'Home')">Home</button>
+		<button class="tablinks recent-projects" onclick="openTab(event, 'RecentProjects')">Recent Projects</button>
+		<button class="tablinks project-categories" onclick="openTab(event, 'ProjectCategories')">Project Categories</button>
+
+    </div>
+
+    <!-- Home tab -->
+    <div id="Home" class="tabcontent">
+        <h2>Home</h2>
+        <!-- Add content for the Home tab -->
+        <!-- ... -->
+    </div>
+
+    <!-- Recent Projects tab -->
+    <div id="RecentProjects" class="tabcontent">
+        <h2>Recent Projects</h2>
+        <!-- Add content for the Recent Projects tab -->
+        <!-- ... -->
+    </div>
+
+    <!-- Project Categories tab -->
+    <div id="ProjectCategories" class="tabcontent">
+        <h2>Project Categories</h2>
+        <!-- Add content for the Project Categories tab -->
+        <!-- ... -->
+    </div>
+
+    <div class="search-container">
+    <input type="text" id="searchInput" placeholder="Search...">
+    <button onclick="searchProjects()">Search</button>
+	</div>
+	<script>
+        // JavaScript functions to handle tab navigation and search functionality
+        function openTab(event, tabName) {
+            // Hide all tab content
+            var tabcontent = document.getElementsByClassName("tabcontent");
+            for (var i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+
+            // Remove the "active" class from all tab buttons
+            var tablinks = document.getElementsByClassName("tablinks");
+            for (var i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+
+            // Show the selected tab content and set the "active" class for the clicked button
+            document.getElementById(tabName).style.display = "block";
+            event.currentTarget.className += " active";
+        }
+
+        function searchProjects() {
+            // Get the search input value
+            var searchInput = document.getElementById("searchInput").value;
+
+            // Perform the search operation
+            // ...
+
+            // Clear the search input field
+            document.getElementById("searchInput").value = "";
+        }
+    </script>
+
+</body>
+</html>
